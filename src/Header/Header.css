@@ -1,0 +1,49 @@
+/* src/components/Header.css */
+
+.header {
+    display: flex;
+    align-items: center;
+    background-color: #3f51b5; /* Replace with your desired color */
+  }
+  
+  .menu-icon {
+    display: none;
+  }
+  
+  .title {
+    flex-grow: 1;
+    text-align: center;
+  }
+  
+  .close-icon {
+    display: none;
+  }
+  
+  @media (max-width: 600px) {
+    .menu-icon {
+      display: block;
+    }
+  
+    .title {
+      display: none;
+    }
+  
+    .close-icon {
+      display: block;
+    }
+  }
+  
+  @media (min-width: 600px) {
+    .menu-icon {
+      display: none;
+    }
+  
+    .title {
+      display: block;
+    }
+  
+    .close-icon {
+      display: none;
+    }
+  }
+  
