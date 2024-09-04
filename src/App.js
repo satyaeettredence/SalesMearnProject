@@ -1,32 +1,28 @@
-// src/App.js
 import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+
 import { Provider } from 'react-redux';
 import store from './ReduxState/store';
-import Layout from './layout';
-import Grid from '@mui/material/Grid2';
-import SalesLineChart from './sales/salesLinechart'
-import UsersList from './test/userList';
+import LayoutComponent from './components/layout/layout';
+import Sales from './components/sales/sales'; 
+import Inventory from './components/inventory/Inventory';
+import UserActivity from './components/userActivity/userActivity';
 
 function App() {
   return (
     <Provider store={store}>
-    <div className="App"  sx={{ display: 'flex'}}>
-      <div className='header'>
-      <Layout />
-      </div>
-    <div className='content row'>
-    <Grid container spacing={2}>
-        <Grid size={1}>
-        </Grid>
-        <Grid size={11}>
-        <SalesLineChart/>
-        <h1>User List</h1>
-        <UsersList />
-        </Grid>
-      </Grid>
-    </div>
-      <footer>@copy</footer>
-    </div>
+    {/* <LayoutComponent></LayoutComponent> */}
+    <Router>
+      <Routes>
+        <Route path="/" element={<LayoutComponent />}>
+          <Route path="sales" element={<Sales />} />
+          <Route path="user" element={<UserActivity />} /> 
+           <Route path="inventory" element={<Inventory />} />
+        </Route>
+        <Route path="*" element={<div>404 Not Found</div>} />
+      </Routes>
+    </Router>
+    {/* <Test/> */}
     </Provider>
   );
 }

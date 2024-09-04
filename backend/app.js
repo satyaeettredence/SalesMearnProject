@@ -1,17 +1,18 @@
 const express = require('express');
-const bodyParser = require('body-parser')
-
+// const bodyParser = require('body-parser')
+const salesRoute =  require('./src/routes/salesRoute')
 const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
-// app.use((req, res) => {
-//   res.setHeader("Access-Control-Allow-Origin", "*");
-//   res.setHeader("Access-Control-Allow-Headers", "Origin");
-//   res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS, HEAD, PATCH");
-// })
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Headers", "Origin");
+  res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS, HEAD, PATCH");
+  next();
+});
 
-// app.use('/api/getSales', )
+app.use('/api/sales', salesRoute);
 
 app.get('/sales', (req, res) => {
   const data = [
