@@ -4,7 +4,8 @@ const Route =  require('./src/routes/Route')
 const app = express();
 
 
-mongoose.connect(process.env.BACKEND_URL_PATH, {
+mongoose.connect("mongodb+srv://satyajeet:YnMLt3Gp5ZK9vwoq@cluster1.ky9ci.mongodb.net/?retryWrites=true&w=majority&appName=Cluster1",
+  {
   useNewUrlParser : true,
   useUnifiedTopology: true
 })

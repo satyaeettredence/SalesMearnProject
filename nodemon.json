@@ -1,5 +1,5 @@
 {
     "env" :{
-        "BACKEND_URL_PATH": "mongoose;//192.168.31.234:27017/MERN_SALES"
+        "BACKEND_URL_PATH": "mongodb://localhost:27017/MERN_SALES"
     }
 }
