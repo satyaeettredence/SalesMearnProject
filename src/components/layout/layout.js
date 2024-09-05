@@ -11,7 +11,7 @@ import './layout.css'; // Custom CSS for additional styling
 import Sales from '../sales/sales';
 import Inventory from '../inventory/Inventory';
 import UserActivity from '../userActivity/userActivity';
-import TestMock from '../test/test';
+// import TestMock from '../test/test';
 
 
 
@@ -88,7 +88,7 @@ const LayoutComponent = () => {
         
             {isUserPage && <UserActivity />}
             {isInventoryPage && <Inventory />}
-            <TestMock/>
+           
           </div>
         </Content>
         <Footer style={{ textAlign: 'center' }}>

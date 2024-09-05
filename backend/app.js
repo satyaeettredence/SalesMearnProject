@@ -1,7 +1,20 @@
 const express = require('express');
-// const bodyParser = require('body-parser')
-const salesRoute =  require('./src/routes/salesRoute')
+ const mongoose = require('mongoose')
+const Route =  require('./src/routes/Route')
 const app = express();
+
+
+mongoose.connect(process.env.BACKEND_URL_PATH, {
+  useNewUrlParser : true,
+  useUnifiedTopology: true
+})
+.then(() => {
+  console.log("Connected With DB")
+})
+.catch(() => {
+  console.log("Connection failed to DB")
+})
+
 
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
@@ -12,7 +25,7 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use('/api/sales', salesRoute);
+app.use('/api', Route);
 
 app.get('/sales', (req, res) => {
   const data = [

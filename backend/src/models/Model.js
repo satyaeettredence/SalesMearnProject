@@ -26,7 +26,7 @@ const data = {
         {ProductId : 7, slaesID : 9, salesQuntity  : 20 , SalesDateTime: Date.now()},
         {ProductId : 8, slaesID :10, salesQuntity  : 10 , SalesDateTime: Date.now()},
     ],
-    user: [
+    User: [
         { userName: 'USER 1', userID:1, salesID: 1 },
         { userName: 'USER 2', userID:2, salesID: 2 },
         { userName: 'USER 3', userID:3, salesID: 2 },
@@ -39,7 +39,7 @@ const data = {
         { userName: 'USER 10',userID:10, salesID: 10 }
     ],
 
-    inventory : [
+    Inventory : [
         { userName: 'USER 1', userID:1, inventoryID: 1, ProductId: 1, date : Date.now(), quantity :10 },
         { userName: 'USER 2', userID:2, inventoryID: 2, ProductId: 1, date : Date.now(), quantity :100},
         { userName: 'USER 3', userID:3, inventoryID: 3, ProductId: 1, date : Date.now(), quantity :20 },
